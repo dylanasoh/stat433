@@ -1,0 +1,30 @@
+---
+title: "hw1"
+author: "Dylan Asoh"
+date: "9/22/2021"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE, message=FALSE}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+data <- read_csv("WI20.txt")
+specific_cols <- data %>% select(STRUCTURE_NUMBER_008, YEAR_BUILT_027, COUNTY_CODE_003, BRIDGE_CONDITION, LOWEST_RATING, DECK_AREA)
+head(specific_cols)
+```
+
+```{r}
+ggplot(specific_cols) + geom_bar(aes(specific_cols$LOWEST_RATING)) + ggtitle("Histogram of the Lowest Ratings of Bridges") + xlab("Lowest Rating")
+```
+
+```{r}
+ggplot(specific_cols) + geom_point(aes(YEAR_BUILT_027, DECK_AREA)) + ggtitle("Deck Area vs Year Built") + ylab("Deck Area") + xlab("Year Built")
+```
