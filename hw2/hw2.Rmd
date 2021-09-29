@@ -4,12 +4,11 @@ author: "Dylan Asoh"
 date: "9/27/2021"
 output: html_document
 ---
+https://github.com/dylanasoh/stat433/tree/master/hw2
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-
 
 ```{r cars}
 library(nycflights13)
