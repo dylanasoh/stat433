@@ -20,7 +20,7 @@ head(flights)
 flights %>% filter(is.na(dep_time))
 ```
 
-1. There are 8255 flights with a missing dep_time. The arrival time, departure delay, arrival delay, tail number, arrival delay, and air_time are also missing.These rows could represent cancelled flights.
+1. There are 8255 flights with a missing dep_time. The arrival time, departure delay, arrival delay, tail number, arrival delay, and air_time are also missing. These rows could represent cancelled flights.
 
 2.
 
@@ -42,4 +42,4 @@ avg_delays_cancelled %>% ggplot(aes(avg_dep_delay,prop_cancelled))  + geom_point
 avg_delays_cancelled %>% ggplot(aes(avg_arr_delay, prop_cancelled)) + geom_point()
 ```
 
-3. There is a pattern between the number of cancelled flights per day and the average delay per day. There is a strong increasing relationship between the proportion of cancelled flights and average arrival delay. There is also a strong relationship between the proprotion of cancelled flights and the average departure delay as shown by the scatter plots.
+3. There is a pattern between the number of cancelled flights per day and the average delay per day. There is a strong increasing relationship between the proportion of cancelled flights and average arrival delay as shown by the first scatter plot. There is also a strong relationship between the proportion of cancelled flights and the average departure delay as shown by the second scatter plot.

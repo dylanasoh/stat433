@@ -3,6 +3,8 @@ hw2
 Dylan Asoh
 9/27/2021
 
+<https://github.com/dylanasoh/stat433/tree/master/hw2>
+
 ``` r
 library(nycflights13)
 library(dplyr)
@@ -60,7 +62,7 @@ flights %>% filter(is.na(dep_time))
 
 1.  There are 8255 flights with a missing dep\_time. The arrival time,
     departure delay, arrival delay, tail number, arrival delay, and
-    air\_time are also missing.These rows could represent cancelled
+    air\_time are also missing. These rows could represent cancelled
     flights.
 
 2.  
@@ -110,6 +112,6 @@ avg_delays_cancelled %>% ggplot(aes(avg_arr_delay, prop_cancelled)) + geom_point
 3.  There is a pattern between the number of cancelled flights per day
     and the average delay per day. There is a strong increasing
     relationship between the proportion of cancelled flights and average
-    arrival delay. There is also a strong relationship between the
-    proprotion of cancelled flights and the average departure delay as
-    shown by the scatter plots.
+    arrival delay as shown by the first scatter plot. There is also a
+    strong relationship between the proportion of cancelled flights and
+    the average departure delay as shown by the second scatter plot.
