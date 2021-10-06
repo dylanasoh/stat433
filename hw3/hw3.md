@@ -62,12 +62,13 @@ flights %>% group_by(hour) %>% summarise(arr_delay=mean(arr_delay, na.rm=TRUE)) 
 
     ## Warning: Removed 1 rows containing missing values (geom_point).
 
-![](hw3_files/figure-gfm/unnamed-chunk-3-1.png)<!-- --> As you can see
-from the graph above you should fly at 7 am to avoid as much delays as
-possible. In fact, you will arrive 6 minutes early. Meanwhile, it is
-apparent that the time you fly in the day is directly related to your
-arrival delay. When you fly earlier in the day you will on average less
-of a delay that when you fly later in the day.
+![](hw3_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+As you can see from the graph above you should fly at 7 am to avoid as
+much delays as possible. In fact, you will arrive 6 minutes early.
+Meanwhile, it is apparent that the time you fly in the day is directly
+related to your arrival delay. When you fly earlier in the day you will
+on average less of a delay that when you fly later in the day.
 
 ``` r
 new_flights <- flights %>% mutate(season=case_when(
@@ -83,11 +84,12 @@ new_flights %>% group_by(season, hour) %>% summarise(arr_delay=mean(arr_delay, n
 
     ## Warning: Removed 1 rows containing missing values (geom_point).
 
-![](hw3_files/figure-gfm/unnamed-chunk-4-1.png)<!-- --> As you can see
-from the graph above, flying in the fall produces the least amount of
-arrival delay on average. The next best season to fly in is Spring.
-Oddly as you fly later in the day during the summer you’re arrival delay
-will increase drastically.
+![](hw3_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+As you can see from the graph above, flying in the fall produces the
+least amount of arrival delay on average. The next best season to fly in
+is Spring. Oddly as you fly later in the day during the summer you’re
+arrival delay will increase drastically.
 
 ``` r
 new_flights %>% group_by(origin, hour) %>% summarise(arr_delay=mean(arr_delay, na.rm=TRUE)) %>% ggplot(aes(hour, arr_delay, color=origin)) + geom_point()
@@ -97,11 +99,12 @@ new_flights %>% group_by(origin, hour) %>% summarise(arr_delay=mean(arr_delay, n
 
     ## Warning: Removed 1 rows containing missing values (geom_point).
 
-![](hw3_files/figure-gfm/unnamed-chunk-5-1.png)<!-- --> As you can see
-from the graph above, on average the airport where you will have the
-least amount of arrival delay is JFK. EWR and LGA have a similar to JFK
-in the morning, but as it gets later in the day they rise above the
-LGA’s average arrival delay. LGA is the second best airport to fly out
-of if you want to avoid as much delay as possible. EWR is the last
-airport out of the three that you should fly out if you want to avoid as
-much delay as possible.
+![](hw3_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+As you can see from the graph above, on average the airport where you
+will have the least amount of arrival delay is JFK. EWR and LGA have a
+similar to JFK in the morning, but as it gets later in the day they rise
+above the LGA’s average arrival delay. LGA is the second best airport to
+fly out of if you want to avoid as much delay as possible. EWR is the
+last airport out of the three that you should fly out if you want to
+avoid as much delay as possible.
