@@ -1,0 +1,40 @@
+---
+title: "hw3"
+author: "Dylan Asoh"
+date: "10/4/2021"
+output: html_document
+---
+For my analysis I wanted to figure out what time of day you should fly if you want to avoid delays as much as possible. To figure this out I graphed the mean arrival delay of each hour versus the hour of the day. I found out that with nothing else considered you should fly in the morning, specifically 7 am, to avoid as much delays as possible. However, there is more to consider when considering what time you should fly during the day. I decided to graph how the season you fly in affects your arrival delay. I found in my second graph that you should fly in fall in order to avoid as much delays as possible. There are still other factors to consider. I wanted to see if the airport you fly from affects your arrival delay. I found from the third graph that out of the EWR, JFK, and LGA airports that you should fly out of the JFK airport to avoid as much delays as possible.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(nycflights13)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+head(flights)
+```
+
+```{r}
+flights %>% group_by(hour) %>% summarise(arr_delay=mean(arr_delay, na.rm=TRUE)) %>% ggplot(aes(hour, arr_delay)) + geom_point()
+```
+As you can see from the graph above you should fly at 7 am to avoid as much delays as possible. In fact, you will arrive 6 minutes early. Meanwhile, it is apparent that the time you fly in the day is directly related to your arrival delay. When you fly earlier in the day you will on average less of a delay that when you fly later in the day.
+```{r}
+new_flights <- flights %>% mutate(season=case_when(
+  month == 1 | month == 12 | month == 2 ~ "Winter",
+  month == 3 | month == 4 | month == 5 ~ "Spring",
+  month == 6 | month == 7 | month == 8 ~ "Summer",
+  month == 9 | month == 10 | month == 11 ~ "Fall"
+))
+new_flights %>% group_by(season, hour) %>% summarise(arr_delay=mean(arr_delay, na.rm=TRUE)) %>% ggplot(aes(hour, arr_delay, color=season)) + geom_point()
+```
+As you can see from the graph above, flying in the fall produces the least amount of arrival delay on average. The next best season to fly in is Spring. Oddly as you fly later in the day during the summer you're arrival delay will increase drastically.
+```{r}
+new_flights %>% group_by(origin, hour) %>% summarise(arr_delay=mean(arr_delay, na.rm=TRUE)) %>% ggplot(aes(hour, arr_delay, color=origin)) + geom_point()
+```
+As you can see from the graph above, on average the airport where you will have the least amount of arrival delay is JFK. EWR and LGA have a similar to JFK in the morning, but as it gets later in the day they rise above the LGA's average arrival delay. LGA is the second best airport to fly out of if you want to avoid as much delay as possible. EWR is the last airport out of the three that you should fly out if you want to avoid as much delay as possible.
