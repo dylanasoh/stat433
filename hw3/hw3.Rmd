@@ -2,7 +2,7 @@
 title: "hw3"
 author: "Dylan Asoh"
 date: "10/4/2021"
-output: github_document
+output: html_document
 ---
 https://github.com/dylanasoh/stat433/tree/master/hw3
 
