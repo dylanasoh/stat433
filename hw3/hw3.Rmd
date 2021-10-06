@@ -2,8 +2,10 @@
 title: "hw3"
 author: "Dylan Asoh"
 date: "10/4/2021"
-output: html_document
+output: github_document
 ---
+https://github.com/dylanasoh/stat433/tree/master/hw3
+
 For my analysis I wanted to figure out what time of day you should fly if you want to avoid delays as much as possible. To figure this out I graphed the mean arrival delay of each hour versus the hour of the day. I found out that with nothing else considered you should fly in the morning, specifically 7 am, to avoid as much delays as possible. However, there is more to consider when considering what time you should fly during the day. I decided to graph how the season you fly in affects your arrival delay. I found in my second graph that you should fly in fall in order to avoid as much delays as possible. There are still other factors to consider. I wanted to see if the airport you fly from affects your arrival delay. I found from the third graph that out of the EWR, JFK, and LGA airports that you should fly out of the JFK airport to avoid as much delays as possible.
 
 ```{r setup, include=FALSE}
