@@ -46,7 +46,7 @@ Notice that ```flights$air_time``` is in minutes.  Make a new column that is the
 
 ```{r}
 flights_air_time_hours <- flights %>% mutate(air_time_hour=air_time / 60)
-flights_air_time_hours
+flights_air_time_hours %>% select(air_time, air_time_hour)
 ```
 
 
