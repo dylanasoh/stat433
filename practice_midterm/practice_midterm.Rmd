@@ -5,7 +5,9 @@ output: html_document
 ---
   
 ## Midterm.
-  
+
+https://github.com/dylanasoh/stat433/tree/master/practice_midterm
+
 #### 1.  Map the delay by destination.
   
   Compute the average delay by destination, then join on the airports data frame so you can show the spatial distribution of delays. Here’s an easy way to draw a map of the United States.  You are welcome to use this code or some other code. 
