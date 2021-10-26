@@ -1,0 +1,23 @@
+---
+title: "project-data"
+author: "Dylan Asoh"
+date: "10/26/2021"
+output: html_document
+---
+## Dylan Asoh, Levi Sands, Abdoul Diop
+
+This data set measures the historic open, high, close, trading volume, and market cap info for a lot of popular crypto currencies.
+
+https://www.kaggle.com/jessevent/all-crypto-currencies?ref=hackernoon.com
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+
+```{r}
+df <- read_csv("crypto-markets.csv")
+head(df)
+```
+
